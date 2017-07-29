@@ -33,7 +33,7 @@
     height: auto;
     font-style: normal;
     margin: 12px;
-    background: #264575;
+    background: #800000;
     -webkit-border-radius: 5;
     -moz-border-radius: 5;
     border-radius: 5px;
@@ -46,7 +46,7 @@
 }
 
 .copy-button:hover {
-    background: #3d72b3;
+    background: #B05655;
     text-decoration: none;
 }
 
