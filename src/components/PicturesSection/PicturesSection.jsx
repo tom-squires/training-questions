@@ -46,7 +46,7 @@ export default class PicturesSection extends Component {
         return (
             <div className={sectionClasses}>
                 <div className="picturesSectionContent">
-                    <h3 className="sectionHeader">workouts</h3>
+                    <h3 className="sectionHeader">Workouts</h3>
                     <button onClick={this.addPicture}>add</button>
                     {this.renderPictureInputs()}
                 </div>
