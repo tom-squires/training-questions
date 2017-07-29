@@ -27,19 +27,21 @@ export default class RaceInformationSection extends Component {
 
         return (
             <div className={sectionClasses}>
-                <div className="sectionMovers">
-                    <button onClick={this.moveSectionUp}>up</button>
-                    <button onClick={this.moveSectionDown}>down</button>
-                </div>
                 <div className="raceInformation__content">
-                    <h3 className="raceInformationHeader">race information</h3>
+                    <h3 className="raceInformationHeader">your information</h3>
                     <div className="raceInformationBody">
-                        <RaceInfoInput label="name" value={this.props.raceInformation.name.value} onValueChange={this.props.setRaceInformationValue} onExcludeChange={this.props.setRaceInformationExclude} />
-                        <RaceInfoInput label="date" value={this.props.raceInformation.date.value} onValueChange={this.props.setRaceInformationValue} onExcludeChange={this.props.setRaceInformationExclude} />
-                        <RaceInfoInput label="distance" value={this.props.raceInformation.distance.value} onValueChange={this.props.setRaceInformationValue} onExcludeChange={this.props.setRaceInformationExclude} />
-                        <RaceInfoInput label="location" value={this.props.raceInformation.location.value} onValueChange={this.props.setRaceInformationValue} onExcludeChange={this.props.setRaceInformationExclude} />
-                        <RaceInfoInput label="website" value={this.props.raceInformation.website.value} onValueChange={this.props.setRaceInformationValue} onExcludeChange={this.props.setRaceInformationExclude} />
-                        <RaceInfoInput label="strava" value={this.props.raceInformation.strava.value} onValueChange={this.props.setRaceInformationValue} onExcludeChange={this.props.setRaceInformationExclude} />
+                        <RaceInfoInput type="text" label="age" value={this.props.raceInformation.age.value}
+                                       onValueChange={this.props.setRaceInformationValue}/>
+                        <RaceInfoInput type="gender" label="gender" value={this.props.raceInformation.sex.value}
+                                       onValueChange={this.props.setRaceInformationValue}/>
+                        <RaceInfoInput type="text" label="current mpw" value={this.props.raceInformation.currentMpw.value}
+                                       onValueChange={this.props.setRaceInformationValue}/>
+                        <RaceInfoInput type="text" label="previous peak mpw"
+                                       value={this.props.raceInformation.previousPeakMpw.value}
+                                       onValueChange={this.props.setRaceInformationValue}/>
+                        <RaceInfoInput type="text" label="current general aerobic pace"
+                                       value={this.props.raceInformation.currentGaPace.value}
+                                       onValueChange={this.props.setRaceInformationValue}/>
                     </div>
                 </div>
             </div>

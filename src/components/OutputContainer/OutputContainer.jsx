@@ -46,40 +46,43 @@ export default class OutputContainer extends Component {
                 case 'pictures':
                     markdown += this.convertPicturesToMarkdown();
                     break;
-                case 'splits':
-                    markdown += this.convertSplitsToMarkdown();
-                    break;
-                case 'text':
-                    markdown += this.convertTextSectionsToMarkdown();
-                    break;
                 default:
                     break;
             }
         }
 
-        markdown += '*This post was generated using [the new race reportr](https://martellaj.github.io/race-reportr/), a tool built by [/u/BBQLays](https://www.reddit.com/u/bbqlays) for making organized, easy-to-read, and beautiful race reports.*'
+        markdown += '\n\n'
+
+        markdown += '### Other helpful information'
+        markdown += '\n\n'
+        markdown += 'Lorem ipsum dolor sit amet, quo quis enim in, et vis soleat utroque expetendis. Viris nostro placerat et cum, ut eum nobis noluisse. Eu zril aperiri tincidunt mea. Idque propriae vituperatoribus ex sed.'
+        markdown += '\n\n'
+
+        markdown += '### My question'
+        markdown += '\n\n'
+        markdown += 'Lorem ipsum dolor sit amet, quo quis enim in, et vis soleat utroque expetendis. Viris nostro placerat et cum, ut eum nobis noluisse. Eu zril aperiri tincidunt mea. Idque propriae vituperatoribus ex sed.'
+        markdown += '\n\n'
+        markdown += 'Lorem ipsum dolor sit amet, quo quis enim in, et vis soleat utroque expetendis. Viris nostro placerat et cum, ut eum nobis noluisse. Eu zril aperiri tincidunt mea. Idque propriae vituperatoribus ex sed.'
+        markdown += '\n\n'
+
+        markdown += '*****'
+        markdown += '\n\n'
+
+        markdown += '*This post was generated using the [training-questions tool](https://martellaj.github.io/race-reportr/), brought to you by the [/r/artc](https://www.reddit.com/r/artc) community.*\n\n'
+        markdown += '*Remember also to check out [race-reportr](https://martellaj.github.io/race-reportr/) - built by [/u/BBQLays](https://www.reddit.com/u/bbqlays) - which heavily influenced the making of this tool.*'
 
         return markdown;
     }
 
     convertRaceInformationToMarkdown() {
-        let markdown = '### Race information\n';
+        let markdown = '### Your information\n';
 
         for (let prop in this.props.raceInformation) {
             if (this.props.raceInformation.hasOwnProperty(prop)) {
                 let property = this.props.raceInformation[prop];
 
-                if (!property.exclude && property.value) {
-                    if (property.output.indexOf('**Website') > -1 || property.output.indexOf('**Strava') > -1) {
-                        let url = property.value;
-                        if (url.indexOf('http') === -1) {
-                            url = 'http://' + property.value;
-                        }
-
-                        markdown += property.output + `[${property.value}](${url})\n`;
-                    } else {
-                        markdown += property.output + property.value + '\n'
-                    }
+                if (property.value) {
+                    markdown += property.output + property.value + '\n'
                 }
             }
         }
@@ -93,12 +96,12 @@ export default class OutputContainer extends Component {
         }
 
         let markdown = '### Goals\n';
-        markdown += '| Goal | Description | Completed? |\n';
-        markdown += '|------|-------------|------------|\n';
+        markdown += '| Goal | Description |\n';
+        markdown += '|------|-------------|\n';
 
         let index = 0;
         for (let goal of this.props.goals) {
-            markdown += `| ${this.convertIndexToLetter(index++)} | ${goal.description} | *${this.convertBooleanToWord(goal.completed)}* |\n`;
+            markdown += `| ${this.convertIndexToLetter(index++)} | ${goal.description} |\n`;
         }
 
         return markdown;
@@ -109,9 +112,10 @@ export default class OutputContainer extends Component {
             return '';
         }
 
-        let markdown = '### Pictures\n';
+        let markdown = '### Workouts\n';
+        markdown += 'Workouts I have traditionally or recently completed:\n\n'
         for (let picture of this.props.pictures) {
-            markdown += `* [${picture.description}](${picture.link})\n`;
+            markdown += `* ${picture.description} [(link to Strava activity)](${picture.link})\n`;
         }
 
         return markdown;

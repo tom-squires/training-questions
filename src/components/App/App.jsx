@@ -9,62 +9,52 @@ export default class App extends Component {
         super();
 
         this.state = {
-            sections: ['raceInfo', 'goals', 'pictures', 'splits', 'text'],
+            sections: ['raceInfo', 'goals', 'pictures'],
             raceInformation: {
-                name: {
-                    value: 'Seattle Marathon',
-                    exclude: false,
-                    output: '* **What?** '
+                labels: {
+                    "age" : "age",
+                    "gender" : "sex",
+                    "current mpw" : "currentMpw",
+                    "previous peak mpw" : "previousPeakMpw",
+                    "current general aerobic pace" : "currentGaPace"
                 },
-                date: {
-                    value: 'November 26, 2017',
+                age: {
+                    value: '27',
                     exclude: false,
-                    output: '* **When?** '
+                    output: '* **Age:** '
                 },
-                distance: {
-                    value: '26.2 miles',
+                sex: {
+                    value: 'Male',
                     exclude: false,
-                    output: '* **How far?** '
+                    output: '* **Gender:** '
                 },
-                location: {
-                    value: 'Seattle, WA',
+                currentMpw: {
+                    value: '20',
                     exclude: false,
-                    output: '* **Where?** '
+                    output: '* **Current mpw:** '
                 },
-                website: {
-                    value: 'http://www.seattlemarathon.org/',
+                previousPeakMpw: {
+                    value: '30',
                     exclude: false,
-                    output: '* **Website:** '
+                    output: '* **Previous peak mpw:** '
                 },
-                strava: {
-                    value: 'https://www.strava.com/activities/739582034',
+                currentGaPace: {
+                    value: '8:30/mile',
                     exclude: false,
-                    output: '* **Strava activity:** '
+                    output: '* **Current General Aerobic pace:** '
                 }
             },
             goals: [
                 {
-                    description: 'Finish in the top 3',
-                    completed: false
-                },
-                {
-                    description: '< 3 hours',
-                    completed: true
+                    description: 'Sub-18:00 5k'
                 }
             ],
             pictures: [
                 {
-                    link: 'http://i0.kym-cdn.com/photos/images/newsfeed/000/279/364/a90.jpg',
-                    description: 'Me at mile 26'
+                    link: 'https://www.strava.com/activities/184003185/overview',
+                    description: '8 x 1km @ 4:00 per km off 70 sec. rest'
                 }
-            ],
-            splitInformation: {
-                isKm: false,
-                splits: [
-                    '8:30'
-                ]
-            },
-            textSections: ['Training', 'Pre-race', 'Race', 'Post-race']
+            ]
         };
 
         let today = new Date();
@@ -109,7 +99,7 @@ export default class App extends Component {
 
     setRaceInformationValue(facet, value) {
         let state = this.state;
-        state.raceInformation[facet].value = value;
+        state.raceInformation[state.raceInformation.labels[facet]].value = value;
         this.setState(state);
     }
 
@@ -144,8 +134,8 @@ export default class App extends Component {
     addPicture() {
         let pictures = this.state.pictures;
         pictures.push({
-            link: 'http://i0.kym-cdn.com/photos/images/newsfeed/000/279/364/a90.jpg',
-            description: 'me at mile 26'
+            link: 'https://www.strava.com/activities/184003185/overview',
+            description: '10 x 400m off 60 sec rest (avg 92 sec.)'
         });
         this.setState({ pictures });
     }
@@ -212,11 +202,11 @@ export default class App extends Component {
         return (
             <div>
                 <div className="header">
-                    <h1>race reportr</h1>
+                    <h1>training questions</h1>
                     <div className="links">
-                        <span className="label"><a href="https://www.reddit.com/message/compose?to=BBQLays&subject=race%20reportr%20bug" target="_blank">report a bug</a></span><span> | </span>
-                        <span className="label"><a href="https://www.reddit.com/message/compose?to=BBQLays&subject=race%20reportr%20feature" target="_blank">request a feature</a></span><span> | </span>
-                        <span className="label"><a href="https://github.com/martellaj/race-reportr" target="_blank">source on github</a></span>
+                        <span className="label"><a href="https://www.reddit.com/message/compose?to=vrlkd&subject=training-questions%20bug" target="_blank">report a bug</a></span><span> | </span>
+                        <span className="label"><a href="https://www.reddit.com/message/compose?to=vrlkd&subject=training-questions%20feature" target="_blank">request a feature</a></span><span> | </span>
+                        <span className="label"><a href="https://github.com/tom-squires/training-questions" target="_blank">source on github</a></span>
                     </div>
                 </div>
                 <div className="app">

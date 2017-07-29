@@ -1,10 +1,9 @@
-# race reportr
+# training questions
 
-*race reportr* is a tool used by reddit's running communities to generate well-organized, beautiful race reports. This iteration of *race reportr* is completely written in React.
+*training questions* is a tool used by reddit's running communities to aid users with posting information-complete training questions.
 
-![race reportr in action](https://media.giphy.com/media/l0ExcOc7pJTPcwtkk/source.gif "race reportr in action")
+*training questions* is brought to you by the [/r/artc community](https://www.reddit.com/r/artc).
 
 ## Acknowledgements
 
-* [Wes Bos](https://twitter.com/wesbos) for his really great [React for Beginners](www.reactforbeginners.com) video series. Highly reocommend to anyone looking for a jumpstart with React.
-* [Dan Abramov](https://twitter.com/dan_abramov) and the [create-react-app](https://github.com/facebookincubator/create-react-app) project to quickly bootstrap React development.
+This tool originated from a fork of the wonderful [race-reportr tool](https://github.com/martellaj/race-reportr) created by [Joe Martella](https://github.com/martellaj).
