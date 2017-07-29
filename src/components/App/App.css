@@ -24,7 +24,18 @@
     padding-bottom: 20px;
 }
 
-.header a {
+.sub-header {
+    margin: 0 auto;
+    color: #e6ecff;
+    text-align: center;
+    vertical-align: center;
+}
+
+.sub-header a {
+    color: #e6ecff;
+}
+
+.header-a {
     color: white;
 }
 

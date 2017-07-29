@@ -151,10 +151,11 @@ export default class App extends Component {
             <div>
                 <div className="header">
                     <h1>training questions</h1>
+                    <div className="sub-header">by <a href="https://www.reddit.com/r/artc" target="_blank">/r/artc</a></div>
                     <div className="links">
-                        <span className="label"><a href="https://www.reddit.com/message/compose?to=vrlkd&subject=training-questions%20bug" target="_blank">report a bug</a></span><span> | </span>
-                        <span className="label"><a href="https://www.reddit.com/message/compose?to=vrlkd&subject=training-questions%20feature" target="_blank">request a feature</a></span><span> | </span>
-                        <span className="label"><a href="https://github.com/tom-squires/training-questions" target="_blank">source on github</a></span>
+                        <span className="label"><a href="https://www.reddit.com/message/compose?to=vrlkd&subject=training-questions%20bug" target="_blank" className="header-a">report a bug</a></span><span> | </span>
+                        <span className="label"><a href="https://www.reddit.com/message/compose?to=vrlkd&subject=training-questions%20feature" target="_blank" className="header-a">request a feature</a></span><span> | </span>
+                        <span className="label"><a href="https://github.com/tom-squires/training-questions" target="_blank" className="header-a">source on github</a></span>
                     </div>
                 </div>
                 <div className="app">
