@@ -1,7 +1,7 @@
-import './PictureInput.css';
+import './WorkoutsInput.css';
 import React, { Component } from 'react';
 
-export default class PictureInput extends Component {
+export default class WorkoutsInput extends Component {
     constructor() {
         super();
 
