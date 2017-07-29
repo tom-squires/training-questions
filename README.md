@@ -1,6 +1,6 @@
 # training questions
 
-*training questions* is a tool used by reddit's running communities to aid users with posting information-complete training questions.
+*training questions* is a tool used by Reddit's running communities to help users post training questions that are information-complete.
 
 *training questions* is brought to you by the [/r/artc community](https://www.reddit.com/r/artc).
 
