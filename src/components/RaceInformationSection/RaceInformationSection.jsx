@@ -1,6 +1,6 @@
 import './RaceInformationSection.css';
 import classNames from 'classnames';
-import RaceInfoInput from '../RaceInfoInput/RaceInfoInput';
+import YourInfoInput from '../YourInfoInput/YourInfoInput';
 import React, { Component } from 'react';
 
 export default class RaceInformationSection extends Component {
@@ -30,16 +30,16 @@ export default class RaceInformationSection extends Component {
                 <div className="raceInformation__content">
                     <h3 className="raceInformationHeader">Your information</h3>
                     <div className="raceInformationBody">
-                        <RaceInfoInput type="text" label="Age:" value={this.props.raceInformation.age.value}
+                        <YourInfoInput type="text" label="Age:" value={this.props.raceInformation.age.value}
                                        onValueChange={this.props.setRaceInformationValue}/>
-                        <RaceInfoInput type="gender" label="Gender:" value={this.props.raceInformation.sex.value}
+                        <YourInfoInput type="gender" label="Gender:" value={this.props.raceInformation.sex.value}
                                        onValueChange={this.props.setRaceInformationValue}/>
-                        <RaceInfoInput type="text" label="Current mpw:" value={this.props.raceInformation.currentMpw.value}
+                        <YourInfoInput type="text" label="Current mpw:" value={this.props.raceInformation.currentMpw.value}
                                        onValueChange={this.props.setRaceInformationValue}/>
-                        <RaceInfoInput type="text" label="Previous peak mpw:"
+                        <YourInfoInput type="text" label="Previous peak mpw:"
                                        value={this.props.raceInformation.previousPeakMpw.value}
                                        onValueChange={this.props.setRaceInformationValue}/>
-                        <RaceInfoInput type="ga" label="Current 'Easy' training pace:"
+                        <YourInfoInput type="ga" label="Current 'Easy' training pace:"
                                        value={this.props.raceInformation.currentGaPace.value}
                                        onValueChange={this.props.setRaceInformationValue}/>
                     </div>

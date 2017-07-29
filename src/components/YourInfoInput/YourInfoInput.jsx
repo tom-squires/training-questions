@@ -1,8 +1,8 @@
-import './RaceInfoInput.css';
+import './YourInfoInput.css';
 import classNames from 'classnames';
 import React, { Component } from 'react';
 
-export default class RaceInfoInput extends Component {
+export default class YourInfoInput extends Component {
     constructor() {
         super();
 
