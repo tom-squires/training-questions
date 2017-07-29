@@ -12,11 +12,11 @@ export default class App extends Component {
             sections: ['yourInfo', 'goals', 'workouts'],
             yourInformation: {
                 labels: {
-                    "Age:" : "age",
-                    "Gender:" : "sex",
-                    "Current mpw:" : "currentMpw",
-                    "Previous peak mpw:" : "previousPeakMpw",
-                    "Current 'Easy' training pace:" : "currentGaPace"
+                    "Age:": "age",
+                    "Gender:": "sex",
+                    "Current mpw:": "currentMpw",
+                    "Previous peak mpw:": "previousPeakMpw",
+                    "Current 'Easy' training pace:": "currentGaPace"
                 },
                 age: {
                     value: '27',
@@ -79,7 +79,7 @@ export default class App extends Component {
         let sectionIndex = sections.indexOf(section);
         sections.splice(sectionIndex, 1);
         sections.splice(sectionIndex - 1, 0, section);
-        this.setState({ sections });
+        this.setState({sections});
     }
 
     moveSectionDown(section) {
@@ -87,7 +87,7 @@ export default class App extends Component {
         let sectionIndex = sections.indexOf(section);
         sections.splice(sectionIndex, 1);
         sections.splice(sectionIndex + 1, 0, section);
-        this.setState({ sections });
+        this.setState({sections});
     }
 
     setYourInformationValue(facet, value) {
@@ -108,20 +108,20 @@ export default class App extends Component {
             description: 'Run really fast',
             completed: false
         });
-        this.setState({ goals });
+        this.setState({goals});
     }
 
     editGoal(index, description, completed) {
         let goals = this.state.goals;
         goals[index].description = description;
         goals[index].completed = completed;
-        this.setState({ goals });
+        this.setState({goals});
     }
 
     removeGoal(index) {
         let goals = this.state.goals;
         goals.splice(index, 1);
-        this.setState({ goals });
+        this.setState({goals});
     }
 
     addWorkout() {
@@ -130,20 +130,20 @@ export default class App extends Component {
             link: 'https://www.strava.com/activities/184003185/overview',
             description: '10 x 400m off 60 sec rest (avg 92 sec.)'
         });
-        this.setState({ workouts });
+        this.setState({workouts});
     }
 
     editWorkout(index, link, description) {
         let workouts = this.state.workouts;
         workouts[index].link = link;
         workouts[index].description = description;
-        this.setState({ workouts });
+        this.setState({workouts});
     }
 
     removeWorkout(index) {
         let workouts = this.state.workouts;
         workouts.splice(index, 1);
-        this.setState({ workouts });
+        this.setState({workouts});
     }
 
     render() {
@@ -151,17 +151,39 @@ export default class App extends Component {
             <div>
                 <div className="header">
                     <h1>training questions</h1>
-                    <div className="sub-header">by <a href="https://www.reddit.com/r/artc" target="_blank">/r/artc</a></div>
+                    <h5 className="sub-header">by <a href="https://www.reddit.com/r/artc" target="_blank">/r/artc</a>
+                    </h5>
                     <div className="links">
-                        <span className="label"><a href="https://www.reddit.com/message/compose?to=vrlkd&subject=training-questions%20bug" target="_blank" className="header-a">report a bug</a></span><span> | </span>
-                        <span className="label"><a href="https://www.reddit.com/message/compose?to=vrlkd&subject=training-questions%20feature" target="_blank" className="header-a">request a feature</a></span><span> | </span>
-                        <span className="label"><a href="https://github.com/tom-squires/training-questions" target="_blank" className="header-a">source on github</a></span>
+                        <span className="label"><a
+                            href="https://www.reddit.com/message/compose?to=vrlkd&subject=training-questions%20bug"
+                            target="_blank" className="header-a">report a bug</a></span><span> | </span>
+                        <span className="label"><a
+                            href="https://www.reddit.com/message/compose?to=vrlkd&subject=training-questions%20feature"
+                            target="_blank" className="header-a">request a feature</a></span><span> | </span>
+                        <span className="label"><a href="https://github.com/tom-squires/training-questions"
+                                                   target="_blank" className="header-a">source on github</a></span>
                     </div>
                 </div>
                 <div className="app">
                     <div className="app-container">
-                        <InputContainer sections={this.state.sections} moveSectionUp={this.moveSectionUp} moveSectionDown={this.moveSectionDown} yourInformation={this.state.yourInformation} setYourInformationValue={this.setYourInformationValue} setYourInformationExclude={this.setYourInformationExclude} goals={this.state.goals} addGoal={this.addGoal} editGoal={this.editGoal} removeGoal={this.removeGoal} workouts={this.state.workouts} addWorkout={this.addWorkout} editWorkout={this.editWorkout} removeWorkout={this.removeWorkout} splitInformation={this.state.splitInformation} addSplit={this.addSplit} editSplit={this.editSplit} removeSplit={this.removeSplit} setDistanceType={this.setDistanceType} textSections={this.state.textSections} addTextSection={this.addTextSection} editTextSection={this.editTextSection} removeTextSection={this.removeTextSection} />
-                        <OutputContainer sections={this.state.sections} yourInformation={this.state.yourInformation} goals={this.state.goals} workouts={this.state.workouts} splitInformation={this.state.splitInformation} textSections={this.state.textSections} />
+                        <InputContainer sections={this.state.sections} moveSectionUp={this.moveSectionUp}
+                                        moveSectionDown={this.moveSectionDown}
+                                        yourInformation={this.state.yourInformation}
+                                        setYourInformationValue={this.setYourInformationValue}
+                                        setYourInformationExclude={this.setYourInformationExclude}
+                                        goals={this.state.goals} addGoal={this.addGoal} editGoal={this.editGoal}
+                                        removeGoal={this.removeGoal} workouts={this.state.workouts}
+                                        addWorkout={this.addWorkout} editWorkout={this.editWorkout}
+                                        removeWorkout={this.removeWorkout}
+                                        splitInformation={this.state.splitInformation} addSplit={this.addSplit}
+                                        editSplit={this.editSplit} removeSplit={this.removeSplit}
+                                        setDistanceType={this.setDistanceType} textSections={this.state.textSections}
+                                        addTextSection={this.addTextSection} editTextSection={this.editTextSection}
+                                        removeTextSection={this.removeTextSection}/>
+                        <OutputContainer sections={this.state.sections} yourInformation={this.state.yourInformation}
+                                         goals={this.state.goals} workouts={this.state.workouts}
+                                         splitInformation={this.state.splitInformation}
+                                         textSections={this.state.textSections}/>
                     </div>
                 </div>
             </div>
