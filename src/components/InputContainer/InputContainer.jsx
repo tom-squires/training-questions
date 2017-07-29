@@ -1,6 +1,6 @@
 import './InputContainer.css';
 import GoalsSection from '../GoalsSection/GoalsSection';
-import PicturesSection from '../PicturesSection/PicturesSection';
+import WorkoutsSection from '../WorkoutsSection/WorkoutsSection';
 import YourInformationSection from '../YourInformationSection/YourInformationSection';
 import React, { Component } from 'react';
 
@@ -29,7 +29,7 @@ export default class InputContainer extends Component {
                     break;
                 case 'pictures':
                     sections.push(
-                        <PicturesSection key={sections.length} sectionClass="section" moveSectionUp={this.props.moveSectionUp} moveSectionDown={this.props.moveSectionDown} pictures={this.props.pictures} addPicture={this.props.addPicture} editPicture={this.props.editPicture} removePicture={this.props.removePicture} />
+                        <WorkoutsSection key={sections.length} sectionClass="section" moveSectionUp={this.props.moveSectionUp} moveSectionDown={this.props.moveSectionDown} pictures={this.props.pictures} addPicture={this.props.addPicture} editPicture={this.props.editPicture} removePicture={this.props.removePicture} />
                     );
                     break;
                 default:

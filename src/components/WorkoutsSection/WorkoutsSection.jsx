@@ -1,9 +1,9 @@
-import './PicturesSection.css';
+import './WorkoutsSection.css';
 import classNames from 'classnames';
-import PictureInput from '../PictureInput/PictureInput';
+import WorkoutsInput from '../WorkoutsInput/WorkoutsInput';
 import React, { Component } from 'react';
 
-export default class PicturesSection extends Component {
+export default class WorkoutsSection extends Component {
     constructor() {
         super();
 
@@ -30,7 +30,7 @@ export default class PicturesSection extends Component {
         for (let i = 0; i < this.props.pictures.length; i++) {
             let pictureInput = this.props.pictures[i];
             pictureInputs.push(
-                <PictureInput key={i} _key={i} link={pictureInput.link} description={pictureInput.description} editPicture={this.props.editPicture} removePicture={this.props.removePicture} />
+                <WorkoutsInput key={i} _key={i} link={pictureInput.link} description={pictureInput.description} editPicture={this.props.editPicture} removePicture={this.props.removePicture} />
             );
         }
 
