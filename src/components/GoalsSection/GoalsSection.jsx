@@ -46,7 +46,7 @@ export default class GoalsSection extends Component {
         return (
             <div className={sectionClasses}>
                 <div>
-                    <h3 className="sectionHeader">goals</h3>
+                    <h3 className="sectionHeader">Goals</h3>
                     <button onClick={this.addGoal}>add</button>
                     {this.renderGoalInputs()}
                 </div>
