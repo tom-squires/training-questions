@@ -26,7 +26,7 @@ export default class GoalsSection extends Component {
         for (let goalInput of this.props.goals) {
             let key = i++;
             goalInputs.push(
-                <GoalInput key={key} _key={key} editGoal={this.props.editGoal} removeGoal={this.props.removeGoal} description={goalInput.description} completed={goalInput.completed} />
+                <GoalInput key={key} _key={key} editGoal={this.props.editGoal} removeGoal={this.props.removeGoal} description={goalInput.description} />
             );
         }
 
@@ -45,10 +45,6 @@ export default class GoalsSection extends Component {
 
         return (
             <div className={sectionClasses}>
-                <div className="sectionMovers">
-                    <button onClick={this.moveSectionUp}>up</button>
-                    <button onClick={this.moveSectionDown}>down</button>
-                </div>
                 <div>
                     <h3 className="sectionHeader">goals</h3>
                     <button onClick={this.addGoal}>add</button>

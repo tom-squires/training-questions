@@ -26,7 +26,6 @@ export default class GoalInput extends Component {
             <div>
                 <button onClick={this.onRemoveClick}>remove</button>
                 <input type="text" onChange={this.onDescriptionChange} value={this.props.description} />
-                <input type="checkbox" checked={this.props.completed} onChange={this.onCompletedChange} />
             </div>
         );
     }

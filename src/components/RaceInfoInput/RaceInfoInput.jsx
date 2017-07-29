@@ -50,14 +50,34 @@ export default class RaceInfoInput extends Component {
             'raceInfoInput__label--disabled': this.state.isInputDisabled
         });
 
-        return (
-            <div className="raceInfoInput">
-                <button className="raceInfoInput__button" onClick={this.onExcludeChange}>{this.state.buttonText}</button>
-                <div className="raceInfoInput_inputDiv">
-                    <p className={labelClasses}>{this.props.label}</p>
-                    <input ref={(input) => { this.input = input; }} type="text" className={inputClasses} disabled={this.state.isInputDisabled} onChange={this.onValueChange} value={this.props.value}/>
-                </div>
-            </div>
-        );
+        switch (this.props.type) {
+            case 'text':
+                return (
+                    <div className="raceInfoInput">
+                        <div className="raceInfoInput_inputDiv">
+                            <p className={labelClasses}>{this.props.label}</p>
+                            <input ref={(input) => { this.input = input; }} type="text" className={inputClasses}
+                                   disabled={this.state.isInputDisabled} onChange={this.onValueChange}
+                                   value={this.props.value}/>
+                        </div>
+                    </div>
+                );
+                break;
+            case 'gender':
+                return (
+                    <div className="raceInfoInput">
+                        <div className="raceInfoInput_inputDiv">
+                            <p className={labelClasses}>{this.props.label}</p>
+                            <select ref={(input) => { this.input = input; }} className={inputClasses}
+                                    disabled={this.state.isInputDisabled} onChange={this.onValueChange}>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                    </div>
+                );
+            default:
+                break;
+        }
     }
 }

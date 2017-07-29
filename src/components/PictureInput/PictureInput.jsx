@@ -26,11 +26,11 @@ export default class PictureInput extends Component {
         return (
             <div className="pictureInput">
                 <span className="label">
-                    picture #{this.props._key + 1}
+                    workout #{this.props._key + 1}
                     <button onClick={this.onRemoveClick}>remove</button>
                 </span>
-                <input type="text" value={this.props.link} onChange={this.onLinkChange} />
                 <input type="text" value={this.props.description} onChange={this.onDescriptionChange} />
+                <input type="text" value={this.props.link} onChange={this.onLinkChange} />
             </div>
         );
     }
