@@ -28,18 +28,18 @@ export default class RaceInformationSection extends Component {
         return (
             <div className={sectionClasses}>
                 <div className="raceInformation__content">
-                    <h3 className="raceInformationHeader">your information</h3>
+                    <h3 className="raceInformationHeader">Your information</h3>
                     <div className="raceInformationBody">
-                        <RaceInfoInput type="text" label="age" value={this.props.raceInformation.age.value}
+                        <RaceInfoInput type="text" label="Age:" value={this.props.raceInformation.age.value}
                                        onValueChange={this.props.setRaceInformationValue}/>
-                        <RaceInfoInput type="gender" label="gender" value={this.props.raceInformation.sex.value}
+                        <RaceInfoInput type="gender" label="Gender:" value={this.props.raceInformation.sex.value}
                                        onValueChange={this.props.setRaceInformationValue}/>
-                        <RaceInfoInput type="text" label="current mpw" value={this.props.raceInformation.currentMpw.value}
+                        <RaceInfoInput type="text" label="Current mpw:" value={this.props.raceInformation.currentMpw.value}
                                        onValueChange={this.props.setRaceInformationValue}/>
-                        <RaceInfoInput type="text" label="previous peak mpw"
+                        <RaceInfoInput type="text" label="Previous peak mpw:"
                                        value={this.props.raceInformation.previousPeakMpw.value}
                                        onValueChange={this.props.setRaceInformationValue}/>
-                        <RaceInfoInput type="text" label="current general aerobic pace"
+                        <RaceInfoInput type="ga" label="Current 'Easy' training pace:"
                                        value={this.props.raceInformation.currentGaPace.value}
                                        onValueChange={this.props.setRaceInformationValue}/>
                     </div>
