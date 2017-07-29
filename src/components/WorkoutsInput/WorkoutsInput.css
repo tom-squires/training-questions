@@ -1,13 +1,13 @@
-.pictureInput {
+.workoutInput {
     margin-bottom: 5px;
 }
 
-.pictureInput input {
+.workoutInput input {
     display: block;
     margin-bottom: 2px;
     width: 75%;
 }
 
-.pictureInput button {
+.workoutInput button {
     margin-right: 5px;
 }

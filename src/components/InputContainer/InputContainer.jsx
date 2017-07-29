@@ -16,9 +16,9 @@ export default class InputContainer extends Component {
 
         for (let section of this.props.sections) {
             switch (section) {
-                case 'raceInfo':
+                case 'yourInfo':
                     sections.push(
-                        <YourInformationSection key={sections.length} sectionClass="section" raceInformation={this.props.raceInformation} setRaceInformationValue={this.props.setRaceInformationValue} setRaceInformationExclude={this.props.setRaceInformationExclude}
+                        <YourInformationSection key={sections.length} sectionClass="section" yourInformation={this.props.yourInformation} setYourInformationValue={this.props.setYourInformationValue} setYourInformationExclude={this.props.setYourInformationExclude}
                         moveSectionUp={this.props.moveSectionUp} moveSectionDown={this.props.moveSectionDown} />
                     );
                     break;
@@ -27,9 +27,9 @@ export default class InputContainer extends Component {
                         <GoalsSection key={sections.length} goals={this.props.goals} addGoal={this.props.addGoal} editGoal={this.props.editGoal} removeGoal={this.props.removeGoal} sectionClass="section" moveSectionUp={this.props.moveSectionUp} moveSectionDown={this.props.moveSectionDown} />
                     );
                     break;
-                case 'pictures':
+                case 'workouts':
                     sections.push(
-                        <WorkoutsSection key={sections.length} sectionClass="section" moveSectionUp={this.props.moveSectionUp} moveSectionDown={this.props.moveSectionDown} pictures={this.props.pictures} addPicture={this.props.addPicture} editPicture={this.props.editPicture} removePicture={this.props.removePicture} />
+                        <WorkoutsSection key={sections.length} sectionClass="section" moveSectionUp={this.props.moveSectionUp} moveSectionDown={this.props.moveSectionDown} workouts={this.props.workouts} addWorkout={this.props.addWorkout} editWorkout={this.props.editWorkout} removeWorkout={this.props.removeWorkout} />
                     );
                     break;
                 default:
