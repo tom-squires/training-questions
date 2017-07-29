@@ -111,7 +111,7 @@ export default class OutputContainer extends Component {
         }
 
         let markdown = '### Workouts\n';
-        markdown += 'Workouts I have traditionally or recently completed:\n\n'
+        markdown += 'Workouts I have recently or traditionally completed:\n\n'
         for (let workout of this.props.workouts) {
             markdown += `* ${workout.description} [(link to Strava activity)](${workout.link})\n`;
         }
