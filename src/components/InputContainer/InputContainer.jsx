@@ -1,7 +1,7 @@
 import './InputContainer.css';
 import GoalsSection from '../GoalsSection/GoalsSection';
 import PicturesSection from '../PicturesSection/PicturesSection';
-import RaceInformationSection from '../RaceInformationSection/RaceInformationSection';
+import YourInformationSection from '../YourInformationSection/YourInformationSection';
 import React, { Component } from 'react';
 
 export default class InputContainer extends Component {
@@ -18,7 +18,7 @@ export default class InputContainer extends Component {
             switch (section) {
                 case 'raceInfo':
                     sections.push(
-                        <RaceInformationSection key={sections.length} sectionClass="section" raceInformation={this.props.raceInformation} setRaceInformationValue={this.props.setRaceInformationValue} setRaceInformationExclude={this.props.setRaceInformationExclude}
+                        <YourInformationSection key={sections.length} sectionClass="section" raceInformation={this.props.raceInformation} setRaceInformationValue={this.props.setRaceInformationValue} setRaceInformationExclude={this.props.setRaceInformationExclude}
                         moveSectionUp={this.props.moveSectionUp} moveSectionDown={this.props.moveSectionDown} />
                     );
                     break;
