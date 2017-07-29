@@ -12,11 +12,11 @@ export default class App extends Component {
             sections: ['raceInfo', 'goals', 'pictures'],
             raceInformation: {
                 labels: {
-                    "age" : "age",
-                    "gender" : "sex",
-                    "current mpw" : "currentMpw",
-                    "previous peak mpw" : "previousPeakMpw",
-                    "current general aerobic pace" : "currentGaPace"
+                    "Age:" : "age",
+                    "Gender:" : "sex",
+                    "Current mpw:" : "currentMpw",
+                    "Previous peak mpw:" : "previousPeakMpw",
+                    "Current 'Easy' training pace:" : "currentGaPace"
                 },
                 age: {
                     value: '27',
@@ -41,7 +41,7 @@ export default class App extends Component {
                 currentGaPace: {
                     value: '8:30/mile',
                     exclude: false,
-                    output: '* **Current General Aerobic pace:** '
+                    output: '* **Current \'Easy\' training pace:** '
                 }
             },
             goals: [

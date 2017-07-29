@@ -62,6 +62,17 @@ export default class RaceInfoInput extends Component {
                         </div>
                     </div>
                 );
+            case 'ga':
+                return (
+                    <div className="raceInfoInput">
+                        <div className="raceInfoInput_inputDiv">
+                            <p className={labelClasses}><a href="https://runsmartproject.com/calculator/" target="_blank">{this.props.label}</a></p>
+                            <input ref={(input) => { this.input = input; }} type="text" className={inputClasses}
+                                   disabled={this.state.isInputDisabled} onChange={this.onValueChange}
+                                   value={this.props.value}/>
+                        </div>
+                    </div>
+                );
             case 'gender':
                 return (
                     <div className="raceInfoInput">
