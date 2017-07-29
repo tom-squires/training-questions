@@ -3,8 +3,6 @@ import GoalsSection from '../GoalsSection/GoalsSection';
 import PicturesSection from '../PicturesSection/PicturesSection';
 import RaceInformationSection from '../RaceInformationSection/RaceInformationSection';
 import React, { Component } from 'react';
-import SplitInformationSection from '../SplitInformationSection/SplitInformationSection';
-import TextSection from '../TextSection/TextSection'
 
 export default class InputContainer extends Component {
     constructor() {
@@ -32,16 +30,6 @@ export default class InputContainer extends Component {
                 case 'pictures':
                     sections.push(
                         <PicturesSection key={sections.length} sectionClass="section" moveSectionUp={this.props.moveSectionUp} moveSectionDown={this.props.moveSectionDown} pictures={this.props.pictures} addPicture={this.props.addPicture} editPicture={this.props.editPicture} removePicture={this.props.removePicture} />
-                    );
-                    break;
-                case 'splits':
-                    sections.push(
-                        <SplitInformationSection key={sections.length} sectionClass="section" moveSectionUp={this.props.moveSectionUp} moveSectionDown={this.props.moveSectionDown} splitInformation={this.props.splitInformation} addSplit={this.props.addSplit} editSplit={this.props.editSplit} removeSplit={this.props.removeSplit} setDistanceType={this.props.setDistanceType} />
-                    );
-                    break;
-                case 'text':
-                    sections.push(
-                        <TextSection key={sections.length} sectionClass="section" moveSectionUp={this.props.moveSectionUp} moveSectionDown={this.props.moveSectionDown} textSections={this.props.textSections} addTextSection={this.props.addTextSection} editTextSection={this.props.editTextSection} removeTextSection={this.props.removeTextSection} />
                     );
                     break;
                 default:
