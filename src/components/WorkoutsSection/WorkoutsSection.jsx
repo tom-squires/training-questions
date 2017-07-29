@@ -9,46 +9,46 @@ export default class WorkoutsSection extends Component {
 
         this.moveSectionUp = this.moveSectionUp.bind(this);
         this.moveSectionDown = this.moveSectionDown.bind(this);
-        this.addPicture = this.addPicture.bind(this);
+        this.addWorkout = this.addWorkout.bind(this);
     }
 
     moveSectionUp() {
-        this.props.moveSectionUp('pictures');
+        this.props.moveSectionUp('workouts');
     }
 
     moveSectionDown() {
-        this.props.moveSectionDown('pictures');
+        this.props.moveSectionDown('workouts');
     }
 
-    addPicture() {
-        this.props.addPicture();
+    addWorkout() {
+        this.props.addWorkout();
     }
 
-    renderPictureInputs() {
-        let pictureInputs = [];
+    renderWorkoutInputs() {
+        let workoutInputs = [];
 
-        for (let i = 0; i < this.props.pictures.length; i++) {
-            let pictureInput = this.props.pictures[i];
-            pictureInputs.push(
-                <WorkoutsInput key={i} _key={i} link={pictureInput.link} description={pictureInput.description} editPicture={this.props.editPicture} removePicture={this.props.removePicture} />
+        for (let i = 0; i < this.props.workouts.length; i++) {
+            let workoutInput = this.props.workouts[i];
+            workoutInputs.push(
+                <WorkoutsInput key={i} _key={i} link={workoutInput.link} description={workoutInput.description} editWorkout={this.props.editWorkout} removeWorkout={this.props.removeWorkout} />
             );
         }
 
-        return pictureInputs;
+        return workoutInputs;
     }
 
     render() {
         let sectionClasses = classNames({
             [`${this.props.sectionClass}`]: true,
-            picturesSection: true
+            workoutsSection: true
         });
 
         return (
             <div className={sectionClasses}>
-                <div className="picturesSectionContent">
+                <div className="workoutsSectionContent">
                     <h3 className="sectionHeader">Workouts</h3>
-                    <button onClick={this.addPicture}>add</button>
-                    {this.renderPictureInputs()}
+                    <button onClick={this.addWorkout}>add</button>
+                    {this.renderWorkoutInputs()}
                 </div>
             </div>
         );

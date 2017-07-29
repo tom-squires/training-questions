@@ -12,36 +12,36 @@ export default class YourInformationSection extends Component {
     }
 
     moveSectionUp() {
-        this.props.moveSectionUp('raceInfo');
+        this.props.moveSectionUp('yourInfo');
     }
 
     moveSectionDown() {
-        this.props.moveSectionDown('raceInfo');
+        this.props.moveSectionDown('yourInfo');
     }
 
     render() {
         let sectionClasses = classNames({
             [`${this.props.sectionClass}`]: true,
-            raceInformationSection: true
+            yourInformationSection: true
         });
 
         return (
             <div className={sectionClasses}>
-                <div className="raceInformation__content">
-                    <h3 className="raceInformationHeader">Your information</h3>
-                    <div className="raceInformationBody">
-                        <YourInfoInput type="text" label="Age:" value={this.props.raceInformation.age.value}
-                                       onValueChange={this.props.setRaceInformationValue}/>
-                        <YourInfoInput type="gender" label="Gender:" value={this.props.raceInformation.sex.value}
-                                       onValueChange={this.props.setRaceInformationValue}/>
-                        <YourInfoInput type="text" label="Current mpw:" value={this.props.raceInformation.currentMpw.value}
-                                       onValueChange={this.props.setRaceInformationValue}/>
+                <div className="yourInformation__content">
+                    <h3 className="yourInformationHeader">Your information</h3>
+                    <div className="yourInformationBody">
+                        <YourInfoInput type="text" label="Age:" value={this.props.yourInformation.age.value}
+                                       onValueChange={this.props.setYourInformationValue}/>
+                        <YourInfoInput type="gender" label="Gender:" value={this.props.yourInformation.sex.value}
+                                       onValueChange={this.props.setYourInformationValue}/>
+                        <YourInfoInput type="text" label="Current mpw:" value={this.props.yourInformation.currentMpw.value}
+                                       onValueChange={this.props.setYourInformationValue}/>
                         <YourInfoInput type="text" label="Previous peak mpw:"
-                                       value={this.props.raceInformation.previousPeakMpw.value}
-                                       onValueChange={this.props.setRaceInformationValue}/>
+                                       value={this.props.yourInformation.previousPeakMpw.value}
+                                       onValueChange={this.props.setYourInformationValue}/>
                         <YourInfoInput type="ga" label="Current 'Easy' training pace:"
-                                       value={this.props.raceInformation.currentGaPace.value}
-                                       onValueChange={this.props.setRaceInformationValue}/>
+                                       value={this.props.yourInformation.currentGaPace.value}
+                                       onValueChange={this.props.setYourInformationValue}/>
                     </div>
                 </div>
             </div>

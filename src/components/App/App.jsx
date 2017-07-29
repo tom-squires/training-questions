@@ -9,8 +9,8 @@ export default class App extends Component {
         super();
 
         this.state = {
-            sections: ['raceInfo', 'goals', 'pictures'],
-            raceInformation: {
+            sections: ['yourInfo', 'goals', 'workouts'],
+            yourInformation: {
                 labels: {
                     "Age:" : "age",
                     "Gender:" : "sex",
@@ -49,7 +49,7 @@ export default class App extends Component {
                     description: 'Sub-18:00 5k'
                 }
             ],
-            pictures: [
+            workouts: [
                 {
                     link: 'https://www.strava.com/activities/184003185/overview',
                     description: '8 x 1km @ 4:00 per km off 70 sec. rest'
@@ -64,21 +64,14 @@ export default class App extends Component {
 
         this.moveSectionUp = this.moveSectionUp.bind(this);
         this.moveSectionDown = this.moveSectionDown.bind(this);
-        this.setRaceInformationValue = this.setRaceInformationValue.bind(this);
-        this.setRaceInformationExclude = this.setRaceInformationExclude.bind(this);
+        this.setYourInformationValue = this.setYourInformationValue.bind(this);
+        this.setYourInformationExclude = this.setYourInformationExclude.bind(this);
         this.addGoal = this.addGoal.bind(this);
         this.removeGoal = this.removeGoal.bind(this);
         this.editGoal = this.editGoal.bind(this);
-        this.addPicture = this.addPicture.bind(this);
-        this.removePicture = this.removePicture.bind(this);
-        this.editPicture = this.editPicture.bind(this);
-        this.addSplit = this.addSplit.bind(this);
-        this.removeSplit = this.removeSplit.bind(this);
-        this.editSplit = this.editSplit.bind(this);
-        this.setDistanceType = this.setDistanceType.bind(this);
-        this.addTextSection = this.addTextSection.bind(this);
-        this.editTextSection = this.editTextSection.bind(this);
-        this.removeTextSection = this.removeTextSection.bind(this);
+        this.addWorkout = this.addWorkout.bind(this);
+        this.removeWorkout = this.removeWorkout.bind(this);
+        this.editWorkout = this.editWorkout.bind(this);
     }
 
     moveSectionUp(section) {
@@ -97,15 +90,15 @@ export default class App extends Component {
         this.setState({ sections });
     }
 
-    setRaceInformationValue(facet, value) {
+    setYourInformationValue(facet, value) {
         let state = this.state;
-        state.raceInformation[state.raceInformation.labels[facet]].value = value;
+        state.yourInformation[state.yourInformation.labels[facet]].value = value;
         this.setState(state);
     }
 
-    setRaceInformationExclude(facet, value) {
+    setYourInformationExclude(facet, value) {
         let state = this.state;
-        state.raceInformation[facet].exclude = value;
+        state.yourInformation[facet].exclude = value;
         this.setState(state);
     }
 
@@ -131,71 +124,26 @@ export default class App extends Component {
         this.setState({ goals });
     }
 
-    addPicture() {
-        let pictures = this.state.pictures;
-        pictures.push({
+    addWorkout() {
+        let workouts = this.state.workouts;
+        workouts.push({
             link: 'https://www.strava.com/activities/184003185/overview',
             description: '10 x 400m off 60 sec rest (avg 92 sec.)'
         });
-        this.setState({ pictures });
+        this.setState({ workouts });
     }
 
-    editPicture(index, link, description) {
-        let pictures = this.state.pictures;
-        pictures[index].link = link;
-        pictures[index].description = description;
-        this.setState({ pictures });
+    editWorkout(index, link, description) {
+        let workouts = this.state.workouts;
+        workouts[index].link = link;
+        workouts[index].description = description;
+        this.setState({ workouts });
     }
 
-    removePicture(index) {
-        let pictures = this.state.pictures;
-        pictures.splice(index, 1);
-        this.setState({ pictures });
-    }
-
-    addSplit() {
-        let splitInformation = this.state.splitInformation;
-        let splits = splitInformation.splits;
-        splits.push('8:30');
-        this.setState({ splitInformation });
-    }
-
-    editSplit(index, split) {
-        let splitInformation = this.state.splitInformation;
-        let splits = splitInformation.splits;
-        splits[index] = split;
-        this.setState({ splitInformation });
-    }
-
-    removeSplit(index) {
-        let splitInformation = this.state.splitInformation;
-        let splits = splitInformation.splits;
-        splits.splice(index, 1);
-        this.setState({ splitInformation });
-    }
-
-    setDistanceType(isKm) {
-        let splitInformation = this.state.splitInformation;
-        splitInformation.isKm = isKm;
-        this.setState({ splitInformation });
-    }
-
-    addTextSection() {
-        let textSections = this.state.textSections;
-        textSections.push('Custom');
-        this.setState({ textSections });
-    }
-
-    editTextSection(index, value) {
-        let textSections = this.state.textSections;
-        textSections[index] = value;
-        this.setState({ textSections });
-    }
-
-    removeTextSection(index) {
-        let textSections = this.state.textSections;
-        textSections.splice(index, 1);
-        this.setState({ textSections });
+    removeWorkout(index) {
+        let workouts = this.state.workouts;
+        workouts.splice(index, 1);
+        this.setState({ workouts });
     }
 
     render() {
@@ -211,8 +159,8 @@ export default class App extends Component {
                 </div>
                 <div className="app">
                     <div className="app-container">
-                        <InputContainer sections={this.state.sections} moveSectionUp={this.moveSectionUp} moveSectionDown={this.moveSectionDown} raceInformation={this.state.raceInformation} setRaceInformationValue={this.setRaceInformationValue} setRaceInformationExclude={this.setRaceInformationExclude} goals={this.state.goals} addGoal={this.addGoal} editGoal={this.editGoal} removeGoal={this.removeGoal} pictures={this.state.pictures} addPicture={this.addPicture} editPicture={this.editPicture} removePicture={this.removePicture} splitInformation={this.state.splitInformation} addSplit={this.addSplit} editSplit={this.editSplit} removeSplit={this.removeSplit} setDistanceType={this.setDistanceType} textSections={this.state.textSections} addTextSection={this.addTextSection} editTextSection={this.editTextSection} removeTextSection={this.removeTextSection} />
-                        <OutputContainer sections={this.state.sections} raceInformation={this.state.raceInformation} goals={this.state.goals} pictures={this.state.pictures} splitInformation={this.state.splitInformation} textSections={this.state.textSections} />
+                        <InputContainer sections={this.state.sections} moveSectionUp={this.moveSectionUp} moveSectionDown={this.moveSectionDown} yourInformation={this.state.yourInformation} setYourInformationValue={this.setYourInformationValue} setYourInformationExclude={this.setYourInformationExclude} goals={this.state.goals} addGoal={this.addGoal} editGoal={this.editGoal} removeGoal={this.removeGoal} workouts={this.state.workouts} addWorkout={this.addWorkout} editWorkout={this.editWorkout} removeWorkout={this.removeWorkout} splitInformation={this.state.splitInformation} addSplit={this.addSplit} editSplit={this.editSplit} removeSplit={this.removeSplit} setDistanceType={this.setDistanceType} textSections={this.state.textSections} addTextSection={this.addTextSection} editTextSection={this.editTextSection} removeTextSection={this.removeTextSection} />
+                        <OutputContainer sections={this.state.sections} yourInformation={this.state.yourInformation} goals={this.state.goals} workouts={this.state.workouts} splitInformation={this.state.splitInformation} textSections={this.state.textSections} />
                     </div>
                 </div>
             </div>

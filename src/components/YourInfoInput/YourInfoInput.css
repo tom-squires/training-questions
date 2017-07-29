@@ -1,33 +1,33 @@
-.raceInfoInput {
+.yourInfoInput {
     align-items: center;
     display: flex;
     margin-bottom: 10px;
     width: 100%;
 }
 
-.raceInfoInput__input {
+.yourInfoInput__input {
     width: 90%;
 }
 
-.raceInfoInput__input--disabled {
+.yourInfoInput__input--disabled {
     background: lightgray;
     border: lightgrey;
     color: darkgray;
 }
 
-.raceInfoInput__label {
+.yourInfoInput__label {
     margin: 0;
     font-size: 12px;
 }
 
-.raceInfoInput__label--disabled {
+.yourInfoInput__label--disabled {
     color: darkgray;
     font-size: 12px;
     font-style: italic;
     margin: 0;
 }
 
-.raceInfoInput_inputDiv {
+.yourInfoInput_inputDiv {
     margin-left: 5px;
     width: 70%;
 }

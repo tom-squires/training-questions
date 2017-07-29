@@ -41,20 +41,20 @@ export default class YourInfoInput extends Component {
 
     render() {
         const inputClasses = classNames({
-            'raceInfoInput__input': true,
-            'raceInfoInput__input--disabled': this.state.isInputDisabled
+            'yourInfoInput__input': true,
+            'yourInfoInput__input--disabled': this.state.isInputDisabled
         });
 
         const labelClasses = classNames({
-            'raceInfoInput__label': true,
-            'raceInfoInput__label--disabled': this.state.isInputDisabled
+            'yourInfoInput__label': true,
+            'yourInfoInput__label--disabled': this.state.isInputDisabled
         });
 
         switch (this.props.type) {
             case 'text':
                 return (
-                    <div className="raceInfoInput">
-                        <div className="raceInfoInput_inputDiv">
+                    <div className="yourInfoInput">
+                        <div className="yourInfoInput_inputDiv">
                             <p className={labelClasses}>{this.props.label}</p>
                             <input ref={(input) => { this.input = input; }} type="text" className={inputClasses}
                                    disabled={this.state.isInputDisabled} onChange={this.onValueChange}
@@ -64,8 +64,8 @@ export default class YourInfoInput extends Component {
                 );
             case 'ga':
                 return (
-                    <div className="raceInfoInput">
-                        <div className="raceInfoInput_inputDiv">
+                    <div className="yourInfoInput">
+                        <div className="yourInfoInput_inputDiv">
                             <p className={labelClasses}><a href="https://runsmartproject.com/calculator/" target="_blank">{this.props.label}</a></p>
                             <input ref={(input) => { this.input = input; }} type="text" className={inputClasses}
                                    disabled={this.state.isInputDisabled} onChange={this.onValueChange}
@@ -75,8 +75,8 @@ export default class YourInfoInput extends Component {
                 );
             case 'gender':
                 return (
-                    <div className="raceInfoInput">
-                        <div className="raceInfoInput_inputDiv">
+                    <div className="yourInfoInput">
+                        <div className="yourInfoInput_inputDiv">
                             <p className={labelClasses}>{this.props.label}</p>
                             <select ref={(input) => { this.input = input; }} className={inputClasses}
                                     disabled={this.state.isInputDisabled} onChange={this.onValueChange}>

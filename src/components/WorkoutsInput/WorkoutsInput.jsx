@@ -11,20 +11,20 @@ export default class WorkoutsInput extends Component {
     }
 
     onDescriptionChange(event) {
-        this.props.editPicture(this.props._key, this.props.link, event.target.value);
+        this.props.editWorkout(this.props._key, this.props.link, event.target.value);
     }
 
     onLinkChange(event) {
-        this.props.editPicture(this.props._key, event.target.value, this.props.description);
+        this.props.editWorkout(this.props._key, event.target.value, this.props.description);
     }
 
     onRemoveClick() {
-        this.props.removePicture(this.props._key);
+        this.props.removeWorkout(this.props._key);
     }
 
     render() {
         return (
-            <div className="pictureInput">
+            <div className="workoutInput">
                 <span className="label">
                     workout #{this.props._key + 1}
                     <button onClick={this.onRemoveClick}>remove</button>

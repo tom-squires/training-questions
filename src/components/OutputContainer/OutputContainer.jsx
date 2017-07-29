@@ -17,11 +17,9 @@ export default class OutputContainer extends Component {
         };
 
         this.onViewSelect = this.onViewSelect.bind(this);
-        this.convertRaceInformationToMarkdown = this.convertRaceInformationToMarkdown.bind(this);
+        this.convertYourInformationToMarkdown = this.convertYourInformationToMarkdown.bind(this);
         this.convertGoalsToMarkdown = this.convertGoalsToMarkdown.bind(this);
-        this.convertPicturesToMarkdown = this.convertPicturesToMarkdown.bind(this);
-        this.convertSplitsToMarkdown = this.convertSplitsToMarkdown.bind(this);
-        this.convertTextSectionsToMarkdown = this.convertTextSectionsToMarkdown.bind(this);
+        this.convertWorkoutsToMarkdown = this.convertWorkoutsToMarkdown.bind(this);
         this.renderMarkdown = this.renderMarkdown.bind(this);
         this.onTabSelect = this.onTabSelect.bind(this);
         this.onCopyClick = this.onCopyClick.bind(this);
@@ -37,49 +35,49 @@ export default class OutputContainer extends Component {
             }
 
             switch (section) {
-                case 'raceInfo':
-                    markdown += this.convertRaceInformationToMarkdown();
+                case 'yourInfo':
+                    markdown += this.convertYourInformationToMarkdown();
                     break;
                 case 'goals':
                     markdown += this.convertGoalsToMarkdown();
                     break;
-                case 'pictures':
-                    markdown += this.convertPicturesToMarkdown();
+                case 'workouts':
+                    markdown += this.convertWorkoutsToMarkdown();
                     break;
                 default:
                     break;
             }
         }
 
-        markdown += '\n\n'
+        markdown += '\n\n';
 
-        markdown += '### Other helpful information'
-        markdown += '\n\n'
-        markdown += 'Lorem ipsum dolor sit amet, quo quis enim in, et vis soleat utroque expetendis. Viris nostro placerat et cum, ut eum nobis noluisse. Eu zril aperiri tincidunt mea. Idque propriae vituperatoribus ex sed.'
-        markdown += '\n\n'
+        markdown += '### Other helpful information';
+        markdown += '\n\n';
+        markdown += 'Lorem ipsum dolor sit amet, quo quis enim in, et vis soleat utroque expetendis. Viris nostro placerat et cum, ut eum nobis noluisse. Eu zril aperiri tincidunt mea. Idque propriae vituperatoribus ex sed.';
+        markdown += '\n\n';
 
-        markdown += '### My question'
-        markdown += '\n\n'
-        markdown += 'Lorem ipsum dolor sit amet, quo quis enim in, et vis soleat utroque expetendis. Viris nostro placerat et cum, ut eum nobis noluisse. Eu zril aperiri tincidunt mea. Idque propriae vituperatoribus ex sed.'
-        markdown += '\n\n'
-        markdown += 'Lorem ipsum dolor sit amet, quo quis enim in, et vis soleat utroque expetendis. Viris nostro placerat et cum, ut eum nobis noluisse. Eu zril aperiri tincidunt mea. Idque propriae vituperatoribus ex sed.'
-        markdown += '\n\n'
+        markdown += '### My question';
+        markdown += '\n\n';
+        markdown += 'Lorem ipsum dolor sit amet, quo quis enim in, et vis soleat utroque expetendis. Viris nostro placerat et cum, ut eum nobis noluisse. Eu zril aperiri tincidunt mea. Idque propriae vituperatoribus ex sed.';
+        markdown += '\n\n';
+        markdown += 'Lorem ipsum dolor sit amet, quo quis enim in, et vis soleat utroque expetendis. Viris nostro placerat et cum, ut eum nobis noluisse. Eu zril aperiri tincidunt mea. Idque propriae vituperatoribus ex sed.';
+        markdown += '\n\n';
 
-        markdown += '*****'
-        markdown += '\n\n'
+        markdown += '*****';
+        markdown += '\n\n';
 
-        markdown += '*This post was generated using the [training-questions tool](https://martellaj.github.io/race-reportr/), brought to you by the [/r/artc](https://www.reddit.com/r/artc) community.*\n\n'
-        markdown += '*Remember also to check out [race-reportr](https://martellaj.github.io/race-reportr/) - built by [/u/BBQLays](https://www.reddit.com/u/bbqlays) - which heavily influenced the making of this tool.*'
+        markdown += '*This post was generated using the [training-questions tool](https://martellaj.github.io/race-reportr/), brought to you by the [/r/artc](https://www.reddit.com/r/artc) community.*\n\n';
+        markdown += '*Remember also to check out [race-reportr](https://martellaj.github.io/race-reportr/) - built by [/u/BBQLays](https://www.reddit.com/u/bbqlays) - which heavily influenced the making of this tool.*';
 
         return markdown;
     }
 
-    convertRaceInformationToMarkdown() {
+    convertYourInformationToMarkdown() {
         let markdown = '### Your information\n';
 
-        for (let prop in this.props.raceInformation) {
-            if (this.props.raceInformation.hasOwnProperty(prop)) {
-                let property = this.props.raceInformation[prop];
+        for (let prop in this.props.yourInformation) {
+            if (this.props.yourInformation.hasOwnProperty(prop)) {
+                let property = this.props.yourInformation[prop];
 
                 if (property.value) {
                     markdown += property.output + property.value + '\n'
@@ -101,64 +99,31 @@ export default class OutputContainer extends Component {
 
         let index = 0;
         for (let goal of this.props.goals) {
-            markdown += `| ${this.convertIndexToLetter(index++)} | ${goal.description} |\n`;
+            markdown += `| ${OutputContainer.convertIndexToLetter(index++)} | ${goal.description} |\n`;
         }
 
         return markdown;
     }
 
-    convertPicturesToMarkdown() {
-        if (this.props.pictures.length === 0) {
+    convertWorkoutsToMarkdown() {
+        if (this.props.workouts.length === 0) {
             return '';
         }
 
         let markdown = '### Workouts\n';
         markdown += 'Workouts I have traditionally or recently completed:\n\n'
-        for (let picture of this.props.pictures) {
-            markdown += `* ${picture.description} [(link to Strava activity)](${picture.link})\n`;
+        for (let workout of this.props.workouts) {
+            markdown += `* ${workout.description} [(link to Strava activity)](${workout.link})\n`;
         }
 
         return markdown;
     }
 
-    convertSplitsToMarkdown() {
-        if (this.props.splitInformation.splits.length === 0) {
-            return '';
-        }
-
-        let distanceType = this.props.splitInformation.isKm ? 'Kilometer' : 'Mile';
-
-        let markdown = '### Splits\n';
-        markdown += `| ${distanceType} | Time |\n`;
-        markdown += '|------|------|\n';
-
-        let index = 1;
-        for (let split of this.props.splitInformation.splits) {
-            markdown += `| ${index++} | ${split} |\n`;
-        }
-
-        return markdown;
-    }
-
-    convertTextSectionsToMarkdown() {
-        if (this.props.textSections.length === 0) {
-            return '';
-        }
-
-        let markdown = '';
-        for (let textSection of this.props.textSections) {
-            markdown += `### ${textSection}\n`;
-            markdown += 'Lorem ipsum dolor sit amet, quo quis enim in, et vis soleat utroque expetendis. Viris nostro placerat et cum, ut eum nobis noluisse. Eu zril aperiri tincidunt mea. Idque propriae vituperatoribus ex sed.\n\n';
-        }
-
-        return markdown;
-    }
-
-    convertIndexToLetter(index) {
+    static convertIndexToLetter(index) {
         return String.fromCharCode(65 + index);
     }
 
-    convertBooleanToWord(value) {
+    static convertBooleanToWord(value) {
         return value ? 'Yes' : 'No';
     }
 
@@ -187,7 +152,7 @@ export default class OutputContainer extends Component {
 
     logReportGeneratedEvent() {
         base.push(`reports`, {
-            data: this.props.raceInformation
+            data: this.props.yourInformation
         });
     }
 
