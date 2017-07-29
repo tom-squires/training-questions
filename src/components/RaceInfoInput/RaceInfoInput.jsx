@@ -62,7 +62,6 @@ export default class RaceInfoInput extends Component {
                         </div>
                     </div>
                 );
-                break;
             case 'gender':
                 return (
                     <div className="raceInfoInput">
