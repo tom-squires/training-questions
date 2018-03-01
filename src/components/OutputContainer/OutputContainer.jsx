@@ -66,7 +66,7 @@ export default class OutputContainer extends Component {
         markdown += '*****';
         markdown += '\n\n';
 
-        markdown += '*This post was generated using the [training-questions tool](https://martellaj.github.io/race-reportr/), brought to you by the [/r/artc](https://www.reddit.com/r/artc) community.*\n\n';
+        markdown += '*This post was generated using the [training-questions tool](https://github.com/tom-squires/training-questions), brought to you by the [/r/artc](https://www.reddit.com/r/artc) community.*\n\n';
         markdown += '*Remember also to check out [race-reportr](https://martellaj.github.io/race-reportr/) - built by [/u/BBQLays](https://www.reddit.com/u/bbqlays) - which heavily influenced the making of this tool.*';
 
         return markdown;
