@@ -1,4 +1,5 @@
 # training questions
+# http://artc-training-questions.com/
 
 *training questions* is a tool used by Reddit's running communities to help users post training questions that are information-complete.
 
